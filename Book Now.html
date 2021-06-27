@@ -1,0 +1,205 @@
+<html>
+<head>
+    <title>guest room booking application</title>
+    <!--links and sources-->
+     <link href="GRB.CSS" rel="stylesheet">
+     <link href="css/bootstrap.min.css" rel="stylesheet">
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+     <style>
+         body{
+          background-image: url('bg1.png');
+          background-repeat: no-repeat;
+          background-size:cover; 
+          background-position: center;  
+    }
+
+.well
+{
+    background: rgba(0,0,0,0.7);
+    border: none;
+
+}
+.wellfix
+{
+    background: rgba(0,0,0,0.7);
+    border: none;
+    height: 150px;
+}
+label{
+    color: #ffbb2b;
+
+}
+input.transparent-input{
+    background-color: transparent !important;
+    border-color: orange !important;
+}
+textarea.transparent-input{
+    background-color: transparent !important;
+    border-color: orange !important;
+}
+select.transparent-input{
+    background-color: transparent !important;
+    border-color: orange !important;
+}
+button.transparent-input{
+    background-color: transparent !important;
+    border-color: orange !important;
+}
+.col-1-4{
+    width:25%;
+}
+hr{
+    border-color: orange;
+}
+     </style>
+</head>
+<body>
+    <div class="container">
+       
+        <img class="img-responsive" src="banner.jpg" style="width: 100%; height: 180px;">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li ><a href="INDEX.html">Home</a></li>
+                    <li><a href="facilitites.html">Room &amp; Facilities</a></li>
+                    <li class="active"><a href="Book Now.html">Online Booking</a></li>
+                    <li><a href="admin1.html">Admin</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://www.facebook.com"><img src="facebook.png"></a></li>
+                    <li><a href="http://www.twitter.com"><img src="twitter.png"></a></li>                    
+                </ul>
+            </div>
+        </nav>
+            <div class="container">
+                <div class='row'>
+                    <div class='col-md-3'></div>
+                    <div class='col-md-6 well'>
+                        <form action="connection.php" method="POST" name="reservation" onsubmit="return validate()" >
+                            <div class="form-group">
+                            <h2 class="heading" ><strong style="color:#ffbb2b;"> Booking & contact</strong></h2><hr>
+                                    <div class="controls">
+                                        <label for="name">Enter Your Name:</label>
+                                        <input type="text" id="name" class="form-control transparent-input" name="name">
+                                            
+                                    </div>
+                                    <div class="controls">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                        <label for="email">Enter Your Mail-ID:</label>
+                                        <input type="email" id="email" class="form-control transparent-input" name="mail" >
+      
+                                    </div>
+                                    <div class="controls">
+                                        <label for="Phone">Enter Your mobile-No:</label>
+                                        <input type="tel" id="Phone" class="form-control transparent-input" name="ph_No" >
+                                        </div>
+                                    <div class="controls">
+                                        <label for="address">Enter Your Address:</label>
+                                        <textarea class="form-control transparent-input" id="address"  name="address"></textarea>
+                                    </div>
+                                    <div class="controls">
+                                        <label for="pincode">PINCODE:</label>
+                                        <input type="number" class="form-control transparent-input" id="pincode"  name="pincode" >
+                                    </div>
+                                </div>
+                                    <hr>
+                                    <div class="form-group">
+                                        <h2 class="heading"><strong style="color:#ffbb2b;">Details</strong></h2>
+                                     <hr>
+                                    <div class="grid">
+                                             <div class="controls">
+                                                <label for="arrive"> Enter your Arrive Date:</label> 
+                                                <input type="date" id="arrive" class="form-control transparent-input" name="arrive" value="arrive_date" >
+                                            </div>
+                                            <div class="controls">
+                                                <label for="depart"> Enter your Departure Date:</label> 
+                                                <input type="date" id="depature" class="form-control transparent-input" name="depature" value="depature_date" required>
+                                            </div>
+                                            <div class="controls">
+                                                <label for="people">Select No.Of people:</label>
+                                                <select class="form-control transparent-input" id="people" value="people" required>
+                                                    <option>select People:</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                </select>
+                                            </div>
+                                            <div class="controls">
+                                                <label for="room_type">Select Room Type:</label>
+                                                <select class="form-control transparent-input" id="room_type" value="rtype" name="room_type" required>
+                                                    <option>select Room Type:</option>
+                                                    <option value="Dup">Duplex</option>
+                                                    <option value="fam">Family</option>
+                                                    <option value="SC">Super Comfort</option>
+                                                    
+                                                    
+                                                </select>
+                                            </div>
+                                            <div class="controls">
+                                                <label for="need_type">Select your need:</label><br>
+                                                <h6 style="color:#ffbb2b;">With Bathroom:</h6>
+                                                <input type="checkbox" value="with" id="with" name="need">
+                                                <h6 style="color:#ffbb2b;">Without Bathroom:</h6>
+                                                <input type="checkbox" value="without" id="without" name="need">
+                                            </div>
+                                            <div class="controls">
+                                                <label for="comment">Please Specify your needs Eg:children cots.</label>
+                                                <textarea class="form-control transparent-input" id="comment"  name="comment"></textarea>
+                                            </div>
+                          <br> <centre>        
+                        <input type="submit" value="submit" class="form-control transparent-input col-1-4" /></centre> 
+                    </div>  
+                        </form>
+                    </div>
+                    <div class='col-md-3'></div>   
+                </div>
+            </div>
+    </div> 
+    <script>
+        function validate(){
+            var name=document.forms["reservation"]["name"];
+            var mail=document.forms["reservation"]["mail"];
+            var phone=document.forms["reservation"]["ph_No"];
+            var address=document.forms["reservation"]["address"];
+            var room=document.forms["reservation"]["rtype"];
+            var people=document.forms["reservation"]["people"];
+            if(name.value==""|| name.value==null){
+                window.alert("please enter your name");
+                name.focus();
+                return false;
+            }
+            if(address.value==""){
+                window.alert("please enter your address");
+                address.focus();
+                return false;
+            }
+            if(mail.value==""){
+                window.alert("please enter valid email address");
+                mail.focus();
+                return false;
+            }
+            if(ph_No.value==""){
+                window.alert("please enter your phone number");
+                ph_No.focus();
+                return false;
+            }
+            if(room.value==""){
+                alert("please select your room");
+                room.focus();
+                return false;
+            }
+            if(people.selectedIndex < 1){
+                alert("please select no of people");
+                people.focus();
+                return false;
+            }
+            return alert('Registration successful');
+        }
+    </script>
+
+</body> 
+</html>       
